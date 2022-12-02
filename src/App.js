@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import { useState } from "react";
 
-const bookDB = {
+const movieDB = {
   Marvel: [
     { name: "Doctor Strange", rating: "5/5" },
     { name: "Thor", rating: "4/5" },
@@ -50,7 +50,7 @@ export default function App() {
       <p style={{ fontSize: "smaller" }}>Checkout my favorite Movies</p>
 
       <div>
-        {Object.keys(bookDB).map((genre) => (
+        {Object.keys(movieDB).map((genre) => (
           <button
             onClick={() => genreClickHandler(genre)}
             style={{
@@ -69,9 +69,9 @@ export default function App() {
       {/* <hr /> */}
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
-          {bookDB[selectedGenre].map((book) => (
+          {movieDB[selectedGenre].map((movie) => (
             <li
-              key={book.name}
+              key={movie.name}
               style={{
                 listStyle: "none",
                 padding: "1rem",
@@ -82,8 +82,8 @@ export default function App() {
               }}
             >
               {" "}
-              <div style={{ fontSize: "larger" }}> {book.name} </div>
-              <div style={{ fontSize: "smaller" }}> {book.rating} </div>
+              <div style={{ fontSize: "larger" }}> {movie.name} </div>
+              <div style={{ fontSize: "smaller" }}> {movie.rating} </div>
             </li>
           ))}
         </ul>
